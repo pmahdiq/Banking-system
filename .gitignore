@@ -214,3 +214,8 @@ lib/
 lib64/
 __pycache__/
 *.pyc
+
+# Diagram projects
+    doc/.$Untitled Diagram.drawio.bkp
+    doc/Untitled Diagram.drawio
+    doc/Untitled.mdj

@@ -11,7 +11,7 @@ class UserRepository:
         self.db.refresh(user)
     
     def remove_user(self, user_id: str) -> bool:
-        user = self.db.query(User).filter(User.id == user_id).first()
+        user = self.get_by_id(user_id)
         if not user:
             return False
 
