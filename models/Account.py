@@ -1,5 +1,11 @@
-class Account:
-    def __init__(self, name, user_id:str):
-        self.name = name
-        self.user_id = user_id
-        self.remaining = 50
+from django.db import models
+from models.User import User
+
+class Account(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="accounts")
+    name = models.CharField(max_length=20)
+    balance = models.FloatField(default=50) #change the default when ever you want
+    account_number = models.CharField(max_length=10, unique=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.account_number} - {self.user.username}"
